@@ -9,7 +9,7 @@
 # TODO: your code here
 n = int(input("Введите количество уровней в пирамиде, n: "))
 s = 0
-while n >= 1:
+while n:
     s = s + n
     n -= 1
 print("Сумма чисел (кол-во кирпичей) равно: ", s)
