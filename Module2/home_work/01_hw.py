@@ -9,4 +9,4 @@
 n=int(input("n: "))
 m=int(input("m: "))
 k=int(input("k: "))
-print("YES") if k<=m+n-1 else print("NO")
+print("YES") if (k % n == 0 or k % m == 0)and k < m*n else print("NO")
