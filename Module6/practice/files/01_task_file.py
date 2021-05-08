@@ -6,10 +6,8 @@
 # что каждое стихотворение отделяется пустой строкой от предыдущего
 
 f = open("data/limericks.txt", "r", encoding="utf-8")
-# for line in f:
-#     print(line.rstrip())
-#
-# print("=======================")
+for line in f:
+    print(line.rstrip())
 
 f.seek(0)
 res = f.readlines()
