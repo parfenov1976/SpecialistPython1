@@ -32,14 +32,31 @@ items = [
     },
 ]
 # Найдите:
-print("Товары на складе представлены брэндами: ")
-
-# TODO: your code here
+print(f"Товары на складе представлены брэндами: ")
+set_brand = set()
+for n in items:
+    set_brand.add(n['brand'])
+for n in sorted(set_brand):
+    print(n)
 
 print("На складе больше всего товаров брэнда(ов): ")
-
-# TODO: your code here
+list_items = []
+for n in items:
+    list_items.append(n['brand'])
+brand_dict = {}
+for n in set_brand:
+    brand_dict.update([(n, list_items.count(n))])
+max_count = sorted(brand_dict.items(), key=lambda x: x[1])[-1][1]
+for el in sorted(brand_dict.items(), key=lambda x: x[1]):
+    if max_count == el[1]:
+        print(el[0])
+print(f"По {max_count} ед. каждого.")
 
 print("На складе самый дорогой товар брэнда(ов): ")
-
-# TODO: your code here
+price_dict = {}
+for n in items:
+    price_dict.update([(n['brand'], n['price'])])
+max_price = sorted(price_dict.items(), key=lambda x: x[1])[-1][1]
+for el in sorted(price_dict.items(), key=lambda x: x[1]):
+    if max_price == el[1]:
+        print(el[0])
