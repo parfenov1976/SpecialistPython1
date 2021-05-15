@@ -6,13 +6,14 @@
 # Если данные вводятся в неверном формате, сообщить об этом и запросить ввод заново.
 
 while True:
+    n_m = (input("Введите размер квадрата в формате nxm: "))
+    n_m = n_m.split("x")
     try:
-        n_m = (input("Введите размер квадрата в формате nxm: "))
-        n_m = n_m.split("x")
         n = int(n_m[0])
         m = int(n_m[1])
-    except ValueError:
-        print("Введены некорректные данные, прошу повторить ввод")
-        continue
-    print(f"Можно отрезать {n//m}")
-    break
+        if n <= 0 or m <= 0:
+            raise ValueError
+        break
+    except (ValueError, IndexError):
+        print("Введены некорректные данные, прошу повторить ввод.")
+print(f"Можно отрезать {n // m}")
