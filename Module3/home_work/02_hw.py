@@ -3,6 +3,19 @@
 # Подсказка:
 # для получения случайного числа используйте функцию randint() модуля random
 import random
+
 numbers = []
 # print(random.randint(10, 20))  # раскомментируйте, чтобы посмотреть работу функции randint
-# TODO: your code here
+
+n = int(input("Введите количество числе n: "))
+
+# 1-ый варинат
+# while n:
+#     n -= 1
+#     numbers.append(random.randint(-100, 100))
+# print(numbers)
+
+# 2-ой вариант
+for _ in range(n): # _ - имя ненужной переменной, если переменная нужна ставим ее имя вместо _
+    numbers.append(random.randint(-100, 100))
+print(numbers)
