@@ -3,9 +3,17 @@
 # выровненного по правой стороне - слева короткие слова дополняем символами пробела
 
 # Исходные данные:
-fruits = ["яблоко", "банан", "киви", "арбуз"]
+fruits = ["яблоко", "банан", "киви", "арбуз", "ананасик"]
 
-# TODO: your code here
+
+len_word = 0
+for element in fruits:
+    if len(element) > len_word:
+        len_word = len(element)
+
+for i, element in enumerate(fruits, 1):
+    # print(str(i) + "." + " "*(len_word-len(element)), element)
+    print(f"{i}. {element:>{len_word}}")
 
 # Пример вывода:
 # 1. яблоко
