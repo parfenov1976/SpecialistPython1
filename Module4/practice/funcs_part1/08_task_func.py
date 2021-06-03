@@ -1,6 +1,6 @@
 # Напишите функцию находящую n-ое число Фибоначчи.
 def fibonacci(n):
-    """Compute the Fibonacci number
+    """Compute the Fibonacci number. Recursion.
 
     :param n: the number of the element in numeric sequence of Fibonacci numbers -> int
     :return: Fibonacci number -> int
