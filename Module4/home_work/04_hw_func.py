@@ -85,14 +85,11 @@ def improper_to_mixed_fraction(f):
         return integer_part, 0, 0
     if denominator % numerator == 0:
         return integer_part, 1, int(denominator / numerator)
-    i = 2
+    i = 1
     while i <= int(numerator ** 0.5):
+        i += 1
         if numerator % i == 0 and denominator % (numerator / i) == 0:
             return integer_part, i, int(denominator / (numerator / i))
-        elif numerator % i == 0 and denominator % i == 0:
-            return integer_part, int(numerator / i), int(denominator / i)
-        else:
-            i += 1
     return integer_part, numerator, denominator
 
 
@@ -114,3 +111,4 @@ try:
 except (ZeroDivisionError, ValueError):
     print("Введены не корректные данные")
     quit()
+
