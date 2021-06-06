@@ -5,11 +5,9 @@ def fibonacci(n):
     :param n: the number of the element in numeric sequence of Fibonacci numbers -> int
     :return: Fibonacci number -> int
     """
-    if n == 1:
-        return 0
-    elif n in (1, 2):
+    if n in (1, 2):
         return 1
-    f = [0, 1]
+    f = [1, 1]
     i = 2
     while i < n:
         i += 1
