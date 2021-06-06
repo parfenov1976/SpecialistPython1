@@ -56,10 +56,10 @@ def mixed_to_improper_fraction(mixed):
 def get_answer(f1, f2, oprn):
     """Сalculation with two fractions
 
-    :param f1: first fraction
-    :param f2: second fraction
+    :param f1: first fraction in format (numerator, denominator)
+    :param f2: second fraction in format (numerator, denominator)
     :param oprn: type of operation
-    :return: improper fraction
+    :return: improper fraction in format (numerator, denominator)
     """
 
     if oprn[0] == '+':
