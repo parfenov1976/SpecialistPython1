@@ -5,4 +5,21 @@
 # Дано: [“ананас”, “кокос”, “Арбуз”, “киви”, “Клюква”, “банан”, “хурма”]
 # Результат: фруктов на букву “к” больше.
 # Дано: [“ананас”, “яблоко”, “Арбуз”, “киви”, “Клюква”, “банан”, “хурма”]
-# Результат: фруктов на букву “к”и “а” больше.
+# Результат: фруктов на букву “к” и “а” больше.
+
+def popular_fruits(itms):
+    itms = list(map(lambda x: x.lower()[0], itms))
+    max_count = itms.count(max(itms, key=lambda x: itms.count(x)))
+    itms = list(filter(lambda x: itms.count(x) == max_count, set(itms)))
+    st = ''
+    st2 = 'у'
+    for el in itms:
+        st += '"' + el + '"'
+        if itms.index(el) < len(itms) - 1:
+            st += ' и '
+            st2 = 'ы'
+    return f'Фруктов на букв{st2} {st} больше'
+
+
+items = ["ананас", "кокос", "Арбуз", "киви", "Клюква", "банан", "хурма"]
+print(popular_fruits(items))
