@@ -6,5 +6,11 @@
 # которые не делятся нацело на 400, високосными не являются.
 
 def days_in_year(num_year):
-    pass
+    if num_year % 400 == 0 or num_year % 4 == 0 and not num_year % 100 == 0:
+        return 366
+    return 365
 
+
+print(days_in_year(2006))
+print(days_in_year(1900))
+print(days_in_year(1996))
