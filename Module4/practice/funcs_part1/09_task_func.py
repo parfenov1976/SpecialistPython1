@@ -5,14 +5,12 @@ def fibonacci(n):
     :param n: the number of the element in numeric sequence of Fibonacci numbers -> int
     :return: Fibonacci number -> int
     """
-    f = [1, 1]
+    a = b = 1
     i = 2
     while i < n:
         i += 1
-        fs = f[1]
-        f[1] = f[0] + f[1]
-        f[0] = fs
-    return f[1]
+        a, b = b, a + b
+    return b
 
 
 n = int(input("Введите номе числа Фибоначчи n: "))
