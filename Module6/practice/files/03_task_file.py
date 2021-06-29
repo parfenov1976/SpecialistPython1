@@ -33,6 +33,3 @@ for key, value in items_dict.items():
         max_item_type = key
 print(max_item_type)
 print("Различных товаров продано:", len(items_dict))
-
-
-
