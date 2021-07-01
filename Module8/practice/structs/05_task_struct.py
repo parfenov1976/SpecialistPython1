@@ -5,3 +5,9 @@
 # Пример: для строки 'pythonist'
 # Получим словарь: {'p': 1, 'y': 1, 't': 2, 'h': 1, 'o': 1, 'n': 1, 's': 1, 'i': 1}
 # Примечание: т.к. ключи неупорядочены, порядок следования ключей может быть произвольным
+
+string = 'pythonist'
+dict_char = {}
+for el in string:
+    dict_char.update({el: string.count(el)})
+print(dict_char)
