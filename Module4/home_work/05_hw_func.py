@@ -78,6 +78,8 @@ def fraction_reduction(f):
     :param f: fraction in format (numerator, denominator)
     :return: fraction in format (numerator, denominator)
     """
+    if int(f[0]) == 0:
+        return int(f[0]), int(f[1])
     x = abs(f[0])
     y = abs(f[1])
     while True:
@@ -95,7 +97,7 @@ def improper_to_mixed_fraction(f):
     :param f: fraction in format (numerator, denominator)
     :return: fraction in format (integer part, numerator, denominator)
     """
-    integer_part = f[0] // f[1]
+    integer_part = abs(f[0]) // f[1] * (-1 if f[0] < 0 else 1)
     denominator = f[1]
     numerator = f[0] - integer_part * denominator
     if numerator == 0:
@@ -114,6 +116,7 @@ try:
     c = get_answer(a, b, op)
     c = fraction_reduction(c)
     c = improper_to_mixed_fraction(c)
+
 
     if c[0] == 0 and c[1] == 0:
         print('0')
