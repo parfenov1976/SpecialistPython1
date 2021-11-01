@@ -20,3 +20,15 @@
 # Слово: | s | a | n | d | w | i | c | h |
 #
 # Шифр:  | s | h | a | c | n | i | d | w |
+word = 'shacnidw'
+print(word[0:-1:2] + word[1::2][::-1])
+c = 1
+word2 = ''
+word3 = ''
+for el in word:
+    if c % 2 != 0:
+        word2 += el
+    else:
+        word3 = el + word3
+    c += 1
+print(word2 + word3)
