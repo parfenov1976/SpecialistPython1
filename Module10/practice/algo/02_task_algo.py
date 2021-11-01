@@ -20,5 +20,5 @@ while True:
     elif trig == 2:
         high = n
     else:
-        print(f'Загаданное число равно {n} \nКоличесвто шагов {c}')
+        print(f'Загаданное число равно {n} \nКоличество шагов {c}')
         break
