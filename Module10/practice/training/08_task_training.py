@@ -2,3 +2,11 @@
 # Какие цифры встречаются в числе чаще всего?
 # Если несколько цифр встречаются одинаковое максимальное кол-во раз - найди любые.
 # Является ли данное число(20000-значное) четным?
+
+with open('data.txt', 'r') as f:
+    number = f.read()
+    digit_list = []
+for el in set(number):
+    digit_list.append((el, number.count(el)))
+print(f'Наиболее часто встречающаяся цифра {sorted(digit_list, key=lambda x: x[1])[-1][0]}')
+print(f'Данное число является {"четным" if int(number)%2==0 else "нечетным"}')
